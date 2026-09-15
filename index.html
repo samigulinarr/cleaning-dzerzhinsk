@@ -217,17 +217,19 @@
             transform: translateX(2px);
         }
 
-        /* Шапка и логотип */
+        /* Шапка и логотип — исправлен баг на мобильных */
         header {
-            padding: 20px 0;
+            padding: 15px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 15px;
+            flex-wrap: wrap; /* Позволяет элементам переноситься на узких экранах */
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--accent-green);
             text-decoration: none;
@@ -235,6 +237,7 @@
             align-items: center;
             gap: 8px;
             letter-spacing: -0.5px;
+            white-space: nowrap; /* Запрещает логотипу разрываться посреди слова */
         }
 
         .logo span {
@@ -246,23 +249,23 @@
         .header-contacts {
             display: flex;
             align-items: center;
-            gap: 12px;
         }
 
         .phone {
             font-weight: 600;
             color: var(--text-main);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             background: var(--accent-sand);
             padding: 8px 14px;
             border-radius: 50px;
             transition: background 0.3s;
+            white-space: nowrap;
         }
 
         /* Главный экран */
         .hero {
-            padding: 30px 0 60px;
+            padding: 20px 0 50px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
@@ -302,7 +305,12 @@
             text-align: center;
         }
 
-        /* Главная карточка с эффектом проявления */
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Главная карточка */
         .hero-card {
             position: relative;
             background-size: cover;
@@ -395,7 +403,6 @@
             gap: 24px;
         }
 
-        /* Карточки сценариев с плавной вуалью */
         .scenario-card {
             position: relative;
             border-radius: var(--radius);
@@ -487,6 +494,11 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        .msg-btn:hover {
+            transform: scale(1.05);
         }
 
         .whatsapp {
@@ -497,16 +509,6 @@
         .vk-btn {
             background-color: #0077FF;
             color: white;
-        }
-
-        .msg-icon {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-size: cover;
-            background-position: center;
-            flex-shrink: 0;
-            background-color: white;
         }
 
         footer {
@@ -533,7 +535,7 @@
                 grid-template-columns: 1fr;
             }
             .hero-content h1 {
-                font-size: 2.4rem;
+                font-size: 2.3rem;
             }
             .hero-card {
                 padding: 24px;
@@ -546,7 +548,7 @@
 </head>
 <body>
 
-    <!-- Интерактивный виджет мини-бота -->
+    <!-- Виджет мини-бота -->
     <button class="chat-widget-btn" id="chatToggle" title="Задать вопрос боту">
         💬
         <span class="chat-badge">1</span>
@@ -586,7 +588,6 @@
                 <p>Бережная и профессиональная уборка квартир и домов в Дзержинске и Володарском районе. Создаем безупречную чистоту, пока вы занимаетесь тем, что любите.</p>
                 <a href="#order" class="btn">Оставить заявку на расчет</a>
             </div>
-            <!-- Главная карточка с фоновым уютным изображением и проявлением -->
             <div class="hero-card" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80');">
                 <h3>Всё продумано за вас</h3>
                 <ul>
@@ -596,7 +597,7 @@
                     <li>Строгий контроль качества перед сдачей</li>
                 </ul>
                 <div class="manager-info">
-                    💬 Управляющий партнер: <strong>Эльмира</strong>
+                    💬 Индивидуальный подход: <strong>наш менеджер</strong>
                 </div>
             </div>
         </section>
@@ -608,17 +609,14 @@
             <p class="section-subtitle">Выберите ситуацию, а мы позаботимся об остальном</p>
             
             <div class="grid-3">
-                <!-- Карточка 1: Утро после праздника -->
                 <div class="scenario-card" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80');">
                     <h3>☕️ Утро после праздника</h3>
                     <p>Быстро и деликатно уберем все следы вчерашней вечеринки, вернем дому первозданную свежесть и уют без лишних хлопот.</p>
                 </div>
-                <!-- Карточка 2: Скоро гости или родные -->
                 <div class="scenario-card" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80');">
                     <h3>🏡 Скоро гости или родные</h3>
                     <p>Наведем безукоризненный лоск перед важной встречей. Каждая полочка, зеркало и уголок будут сиять чистотой.</p>
                 </div>
-                <!-- Карточка 3: Для семьи с детьми -->
                 <div class="scenario-card" style="background-image: url('https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=600&q=80');">
                     <h3>👶 Для семьи с детьми</h3>
                     <p>Используем только гипоаллергенные, безопасные эко-средства без резких запахов. Идеально чисто и безопасно для малышей.</p>
@@ -634,27 +632,16 @@
                     <h2>Обсудим вашу уборку?</h2>
                     <p>Оставьте заявку на предварительный расчет. Наш менеджер изучит детали вашего заказа и свяжется с вами для согласования удобного времени.</p>
                     <div class="messengers">
-                        <!-- Кнопка WhatsApp -->
-                        <a href="https://wa.me/79308026864" target="_blank" class="msg-btn whatsapp">
-                            <span class="msg-icon" style="background-image: url('whatsaap.jpg');"></span>
-                            WhatsApp
-                        </a>
-                        <!-- Кнопка ВКонтакте -->
-                        <a href="https://vk.me/id167602054" target="_blank" class="msg-btn vk-btn">
-                            <span class="msg-icon" style="background-color: white; display: flex; align-items: center; justify-content: center; color: #0077FF; font-weight: bold; font-size: 11px;">ВК</span>
-                            ВКонтакте
-                        </a>
-                        <!-- Кнопка Позвонить -->
-                        <a href="tel:+79308026864" class="msg-btn" style="background: var(--accent-sand); color: var(--text-main);">
-                            📞 Связаться
-                        </a>
+                        <a href="https://wa.me/79308026864" target="_blank" class="msg-btn whatsapp">WhatsApp</a>
+                        <a href="https://vk.me/id167602054" target="_blank" class="msg-btn vk-btn">ВКонтакте</a>
+                        <a href="tel:+79308026864" class="msg-btn" style="background: var(--accent-sand); color: var(--text-main);">📞 Позвонить</a>
                     </div>
                 </div>
                 <div>
                     <div style="background: var(--bg-color); padding: 24px; border-radius: 16px;">
                         <h3 style="margin-bottom: 12px; color: var(--accent-green);">Детали заказа</h3>
                         <p style="margin-bottom: 8px;"><strong>Телефон:</strong> +7 (930) 802-68-64</p>
-                        <p style="margin-bottom: 8px;"><strong>Контактное лицо:</strong> Эльмира</p>
+                        <p style="margin-bottom: 8px;"><strong>Контактное лицо:</strong> наш менеджер</p>
                         <p><strong>Район работы:</strong> Дзержинск и Володарский район</p>
                     </div>
                 </div>
@@ -671,7 +658,6 @@
         </div>
     </footer>
 
-    <!-- Логика работы мини-бота -->
     <script>
         const chatToggle = document.getElementById('chatToggle');
         const chatPopup = document.getElementById('chatPopup');
@@ -711,7 +697,7 @@
             } else if (option === 2) {
                 appendMessage("📍 Узнать районы выезда", "user");
                 setTimeout(() => {
-                    appendMessage("Мы обслуживаем весь Дзержинск и Володарский район. Напишите адрес объекту нашему менеджеру для согласования графика.", "bot");
+                    appendMessage("Мы обслуживаем весь Дзержинск и Володарский район. Напишите адрес объекта нашему менеджеру для согласования графика.", "bot");
                     updateOptions([
                         { text: "📞 Связаться с нами", action: "window.location.href='tel:+79308026864'" },
                         { text: "◀️ Назад в меню", action: "resetMenu()" }
