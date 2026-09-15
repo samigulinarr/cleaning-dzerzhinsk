@@ -45,43 +45,176 @@
             padding: 0 20px;
         }
 
-        /* Плавающая кнопка MAX */
-        .max-float {
+        /* Виджет мини-бота в углу */
+        .chat-widget-btn {
             position: fixed;
-            right: 16px;
+            right: 20px;
             bottom: 24px;
             z-index: 9999;
-            padding: 6px 12px 6px 6px;
-            border-radius: 999px;
-            background: #0066ff;
-            color: #fff;
-            font-weight: 500;
-            font-size: 0.8rem;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: transform 0.2s, background 0.2s;
-        }
-
-        .max-float:hover {
-            transform: scale(1.03);
-            background: #0052cc;
-        }
-
-        .max-icon-wrap {
-            width: 26px;
-            height: 26px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            flex-shrink: 0;
-            background-color: #fff;
-            background-image: url('max.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            background: var(--accent-green);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(74, 107, 93, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .chat-widget-btn:hover {
+            transform: scale(1.08);
+            background: var(--accent-hover);
+        }
+
+        .chat-badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: #ff4757;
+            color: white;
+            font-size: 0.7rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            border: 2px solid white;
+        }
+
+        /* Окно чата */
+        .chat-popup {
+            position: fixed;
+            right: 20px;
+            bottom: 96px;
+            z-index: 9999;
+            width: 360px;
+            max-width: calc(100vw - 40px);
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            animation: fadeInChat 0.3s ease;
+        }
+
+        @keyframes fadeInChat {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-header {
+            background: var(--accent-green);
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header-info h4 {
+            font-size: 1.05rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .chat-header-info span {
+            font-size: 0.75rem;
+            opacity: 0.85;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .chat-header-info span::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: #2ecc71;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.4rem;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .chat-close:hover {
+            opacity: 1;
+        }
+
+        .chat-body {
+            padding: 16px;
+            height: 320px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: #FAFAFA;
+        }
+
+        .chat-msg {
+            max-width: 85%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .chat-msg.bot {
+            background: white;
+            color: var(--text-main);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .chat-msg.user {
+            background: var(--accent-green);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-options {
+            padding: 12px 16px;
+            background: white;
+            border-top: 1px solid var(--accent-sand);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .chat-opt-btn {
+            background: var(--accent-sand);
+            border: none;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            cursor: pointer;
+            text-align: left;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .chat-opt-btn:hover {
+            background: #e2ded4;
+            transform: translateX(2px);
         }
 
         /* Шапка */
@@ -334,11 +467,31 @@
 </head>
 <body>
 
-    <!-- Плавающая кнопка MAX -->
-    <a class="max-float" href="https://oneme.ru/79308026864" target="_blank" rel="noopener">
-        <div class="max-icon-wrap"></div>
-        Max
-    </a>
+    <!-- Интерактивный виджет мини-бота -->
+    <button class="chat-widget-btn" id="chatToggle" title="Задать вопрос боту">
+        💬
+        <span class="chat-badge">1</span>
+    </button>
+
+    <div class="chat-popup" id="chatPopup">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <h4>Чистый Дом • Помощник</h4>
+                <span>Эльмира онлайн</span>
+            </div>
+            <button class="chat-close" id="chatClose">&times;</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-msg bot">
+                Здравствуйте! 👋 Я виртуальный помощник сервиса «Чистый Дом». Чем мы можем вам помочь?
+            </div>
+        </div>
+        <div class="chat-options" id="chatOptions">
+            <button class="chat-opt-btn" onclick="botAnswer(1)">💰 Как узнать стоимость уборки?</button>
+            <button class="chat-opt-btn" onclick="botAnswer(2)">📍 Где вы работаете?</button>
+            <button class="chat-opt-btn" onclick="botAnswer(3)">📞 Связаться с Эльмирой в WhatsApp</button>
+        </div>
+    </div>
 
     <div class="container">
         <header>
@@ -403,11 +556,6 @@
                             <span class="msg-icon" style="background-image: url('whatsaap.jpg');"></span>
                             WhatsApp
                         </a>
-                        <!-- Кнопка Max -->
-                        <a href="https://oneme.ru/79308026864" target="_blank" class="msg-btn max-btn">
-                            <span class="msg-icon" style="background-image: url('max.png');"></span>
-                            Max
-                        </a>
                         <!-- Кнопка Позвонить -->
                         <a href="tel:+79308026864" class="msg-btn" style="background: var(--accent-sand); color: var(--text-main);">
                             📞 Позвонить
@@ -434,5 +582,78 @@
         </div>
     </footer>
 
+    <!-- Логика работы мини-бота -->
+    <script>
+        const chatToggle = document.getElementById('chatToggle');
+        const chatPopup = document.getElementById('chatPopup');
+        const chatClose = document.getElementById('chatClose');
+        const chatBody = document.getElementById('chatBody');
+        const chatOptions = document.getElementById('chatOptions');
+        const chatBadge = document.querySelector('.chat-badge');
+
+        chatToggle.addEventListener('click', () => {
+            chatPopup.style.display = chatPopup.style.display === 'flex' ? 'none' : 'flex';
+            chatBadge.style.display = 'none';
+        });
+
+        chatClose.addEventListener('click', () => {
+            chatPopup.style.display = 'none';
+        });
+
+        function appendMessage(text, sender) {
+            const msg = document.createElement('div');
+            msg.className = `chat-msg ${sender}`;
+            msg.innerText = text;
+            chatBody.appendChild(msg);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function botAnswer(option) {
+            if (option === 1) {
+                appendMessage("💰 Как узнать стоимость уборки?", "user");
+                setTimeout(() => {
+                    appendMessage("Стоимость зависит от площади и типа уборки (поддерживающая, генеральная или после ремонта). Напишите нам в WhatsApp, и Эльмира рассчитает точную цену за 2 минуты!", "bot");
+                    updateOptions([
+                        { text: "💬 Написать в WhatsApp", action: "window.open('https://wa.me/79308026864', '_blank')" },
+                        { text: "◀️ Назад в меню", action: "resetMenu()" }
+                    ]);
+                }, 500);
+            } else if (option === 2) {
+                appendMessage("📍 Где вы работаете?", "user");
+                setTimeout(() => {
+                    appendMessage("Мы работаем по всему городу Дзержинску и в Володарском районе. Приезжаем со своим инвентарем и экологичной химией.", "bot");
+                    updateOptions([
+                        { text: "📞 Позвонить нам", action: "window.location.href='tel:+79308026864'" },
+                        { text: "◀️ Назад в меню", action: "resetMenu()" }
+                    ]);
+                }, 500);
+            } else if (option === 3) {
+                appendMessage("📞 Связаться с Эльмирой", "user");
+                setTimeout(() => {
+                    appendMessage("Открываем чат с Эльмирой...", "bot");
+                    window.open('https://wa.me/79308026864', '_blank');
+                }, 400);
+            }
+        }
+
+        function updateOptions(opts) {
+            chatOptions.innerHTML = '';
+            opts.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'chat-opt-btn';
+                btn.innerText = opt.text;
+                btn.setAttribute('onclick', opt.action);
+                chatOptions.appendChild(btn);
+            });
+        }
+
+        function resetMenu() {
+            chatOptions.innerHTML = `
+                <button class="chat-opt-btn" onclick="botAnswer(1)">💰 Как узнать стоимость уборки?</button>
+                <button class="chat-opt-btn" onclick="botAnswer(2)">📍 Где вы работаете?</button>
+                <button class="chat-opt-btn" onclick="botAnswer(3)">📞 Связаться с Эльмирой в WhatsApp</button>
+            `;
+        }
+    </script>
 </body>
 </html>
