@@ -45,11 +45,11 @@
             padding: 0 20px;
         }
 
-        /* Исправленная плавающая кнопка MAX для мобильных */
+        /* Плавающая кнопка MAX */
         .max-float {
             position: fixed;
             right: 16px;
-            bottom: 24px; /* Подняли выше, чтобы не перекрывать контент снизу */
+            bottom: 24px;
             z-index: 9999;
             padding: 6px 12px 6px 6px;
             border-radius: 999px;
@@ -316,7 +316,6 @@
             margin-top: 12px;
         }
 
-        /* Мобильные экраны */
         @media (max-width: 968px) {
             .hero, .order-card, .grid-3 {
                 grid-template-columns: 1fr;
@@ -335,8 +334,8 @@
 </head>
 <body>
 
-    <!-- Плавающая кнопка MAX (компактная, поднята выше) -->
-    <a class="max-float" href="https://max.app/79308026864" target="_blank" rel="noopener">
+    <!-- Плавающая кнопка MAX -->
+    <a class="max-float" href="https://oneme.ru/79308026864" target="_blank" rel="noopener">
         <div class="max-icon-wrap"></div>
         Max
     </a>
@@ -399,14 +398,17 @@
                     <h2>Обсудим вашу уборку?</h2>
                     <p>Свяжитесь с нами напрямую удобным способом. Ответим на все вопросы, подберем удобное время и рассчитаем стоимость за пару минут.</p>
                     <div class="messengers">
+                        <!-- Кнопка WhatsApp -->
                         <a href="https://wa.me/79308026864" target="_blank" class="msg-btn whatsapp">
                             <span class="msg-icon" style="background-image: url('whatsaap.jpg');"></span>
                             WhatsApp
                         </a>
-                        <a href="https://max.app/79308026864" target="_blank" class="msg-btn max-btn">
+                        <!-- Кнопка Max -->
+                        <a href="https://oneme.ru/79308026864" target="_blank" class="msg-btn max-btn">
                             <span class="msg-icon" style="background-image: url('max.png');"></span>
                             Max
                         </a>
+                        <!-- Кнопка Позвонить -->
                         <a href="tel:+79308026864" class="msg-btn" style="background: var(--accent-sand); color: var(--text-main);">
                             📞 Позвонить
                         </a>
