@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Чистый Дом — бережная уборка в Дзержинске и Володарском районе</title>
+    <!-- Фавикон (иконка вкладки) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -30,6 +32,7 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         h1, h2, h3 {
@@ -57,6 +60,12 @@
             font-weight: 700;
             color: var(--accent-green);
             text-decoration: none;
+        }
+
+        .header-contacts {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
 
         .phone {
@@ -113,6 +122,7 @@
             transition: background 0.3s, transform 0.2s;
             border: none;
             cursor: pointer;
+            text-align: center;
         }
 
         .btn:hover {
@@ -149,6 +159,13 @@
             content: "✓";
             color: var(--accent-green);
             font-weight: bold;
+        }
+
+        .manager-info {
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            font-weight: 500;
         }
 
         /* Сценарии (ситуации) */
@@ -198,46 +215,62 @@
             color: var(--text-muted);
         }
 
-        /* Блок заботы */
-        .care-section {
+        /* Блок заказа / Контакты */
+        .order-section {
             padding: 80px 0;
         }
 
-        .care-grid {
+        .order-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 60px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 48px;
+            gap: 40px;
             align-items: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
         }
 
-        .care-text h2 {
+        .order-card h2 {
             font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .order-card p {
+            color: var(--text-muted);
             margin-bottom: 24px;
         }
 
-        .care-text p {
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+        .messengers {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
         }
 
-        .care-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 32px;
+        .msg-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
         }
 
-        .care-item {
-            background: white;
-            padding: 24px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        .whatsapp {
+            background-color: #25D366;
+            color: white;
         }
 
-        .care-item h4 {
-            margin-bottom: 8px;
-            color: var(--accent-green);
+        .max-app {
+            background-color: var(--accent-green);
+            color: white;
+        }
+
+        .msg-btn:hover {
+            opacity: 0.9;
         }
 
         /* Футер */
@@ -255,11 +288,15 @@
 
         /* Адаптивность */
         @media (max-width: 968px) {
-            .hero, .care-grid, .grid-3 {
+            .hero, .order-card, .grid-3 {
                 grid-template-columns: 1fr;
             }
             .hero-content h1 {
                 font-size: 2.8rem;
+            }
+            header {
+                flex-direction: column;
+                gap: 16px;
             }
         }
     </style>
@@ -269,14 +306,16 @@
     <div class="container">
         <header>
             <a href="#" class="logo">🌿 Чистый Дом</a>
-            <a href="tel:+79990000000" class="phone">+7 (999) 000-00-00</a>
+            <div class="header-contacts">
+                <a href="tel:+79308026864" class="phone">+7 (930) 802-68-64</a>
+            </div>
         </header>
 
         <section class="hero">
             <div class="hero-content">
                 <h1>Подарите себе выходные, а рутину <span>оставьте нам</span></h1>
                 <p>Бережная и профессиональная уборка квартир и домов в Дзержинске и Володарском районе. Создаем безупречную чистоту, пока вы занимаетесь тем, что любите.</p>
-                <a href="tel:+79990000000" class="btn">Вызвать клинера</a>
+                <a href="#order" class="btn">Вызвать клинера</a>
             </div>
             <div class="hero-card">
                 <h3>Всё продумано за вас</h3>
@@ -286,7 +325,9 @@
                     <li>Оберегаем хрупкие вещи и декор</li>
                     <li>Строгий контроль качества перед сдачей</li>
                 </ul>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Работаем по всему Дзержинску и Володарскому району.</p>
+                <div class="manager-info">
+                    💬 Руководитель сервиса: <strong>Эльмира</strong>
+                </div>
             </div>
         </section>
     </div>
@@ -313,22 +354,23 @@
         </div>
     </section>
 
-    <div class="container">
-        <section class="care-section">
-            <div class="care-grid">
-                <div class="care-text">
-                    <h2>Нам можно доверить свой дом</h2>
-                    <p>Мы знаем, как важно чувствовать себя в безопасности и комфорте. Наши специалисты проходят строгий отбор, обучаются бережному обращению с деликатными поверхностями и ценят ваше личное пространство.</p>
-                    <p>Вам не нужно стоять над душой или покупать специальные тряпки — мы полностью автономны.</p>
-                </div>
-                <div class="care-features">
-                    <div class="care-item">
-                        <h4>100%</h4>
-                        <p>Безопасные составы для детей и животных</p>
+    <div class="container" id="order">
+        <section class="order-section">
+            <div class="order-card">
+                <div>
+                    <h2>Обсудим вашу уборку?</h2>
+                    <p>Свяжитесь с Эльмирой напрямую удобным способом. Ответим на все вопросы, подберем удобное время и рассчитаем стоимость за пару минут.</p>
+                    <div class="messengers">
+                        <a href="https://wa.me/79308026864" target="_blank" class="msg-btn whatsapp">WhatsApp</a>
+                        <a href="tel:+79308026864" class="msg-btn max-app">Позвонить</a>
                     </div>
-                    <div class="care-item">
-                        <h4>Опыт</h4>
-                        <p>Бережный уход за премиальным ремонтом</p>
+                </div>
+                <div>
+                    <div style="background: var(--bg-color); padding: 32px; border-radius: 16px;">
+                        <h3 style="margin-bottom: 12px; color: var(--accent-green);">Контакты сервиса</h3>
+                        <p style="margin-bottom: 8px;"><strong>Телефон:</strong> +7 (930) 802-68-64</p>
+                        <p style="margin-bottom: 8px;"><strong>Менеджер:</strong> Эльмира</p>
+                        <p><strong>Район работы:</strong> Дзержинск и Володарский район</p>
                     </div>
                 </div>
             </div>
