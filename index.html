@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Чистый Дом — бережная уборка в Дзержинске и Володарском районе</title>
-    <!-- Фавикон (иконка вкладки) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -43,28 +42,28 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
-        /* Плавающая синяя кнопка MAX с иконкой (взято с сайта адвокатов) */
+        /* Исправленная плавающая кнопка MAX для мобильных */
         .max-float {
             position: fixed;
-            right: 20px;
-            bottom: 20px;
+            right: 16px;
+            bottom: 24px; /* Подняли выше, чтобы не перекрывать контент снизу */
             z-index: 9999;
-            padding: 8px 16px 8px 8px;
+            padding: 6px 12px 6px 6px;
             border-radius: 999px;
             background: #0066ff;
             color: #fff;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4);
             border: 1px solid rgba(255,255,255,0.2);
-            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, background 0.2s;
         }
 
         .max-float:hover {
@@ -73,8 +72,8 @@
         }
 
         .max-icon-wrap {
-            width: 32px;
-            height: 32px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             flex-shrink: 0;
             background-color: #fff;
@@ -87,7 +86,7 @@
 
         /* Шапка */
         header {
-            padding: 24px 0;
+            padding: 20px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -95,7 +94,7 @@
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--accent-green);
             text-decoration: none;
@@ -104,27 +103,23 @@
         .header-contacts {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
         }
 
         .phone {
             font-weight: 600;
             color: var(--text-main);
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             background: var(--accent-sand);
-            padding: 10px 20px;
+            padding: 8px 14px;
             border-radius: 50px;
             transition: background 0.3s;
         }
 
-        .phone:hover {
-            background: var(--peach);
-        }
-
         /* Главный экран */
         .hero {
-            padding: 60px 0 80px;
+            padding: 30px 0 60px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
@@ -132,9 +127,9 @@
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             line-height: 1.2;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             color: var(--text-main);
         }
 
@@ -144,50 +139,45 @@
         }
 
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--accent-green);
             color: white;
-            padding: 18px 36px;
+            padding: 16px 32px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: background 0.3s, transform 0.2s;
             border: none;
             cursor: pointer;
             text-align: center;
         }
 
-        .btn:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-        }
-
         .hero-card {
             background: var(--peach);
             border-radius: var(--radius);
-            padding: 48px;
+            padding: 40px;
             position: relative;
         }
 
         .hero-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
+            font-size: 1.6rem;
+            margin-bottom: 14px;
         }
 
         .hero-card ul {
             list-style: none;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .hero-card li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -201,68 +191,64 @@
         }
 
         .manager-info {
-            margin-top: 20px;
-            font-size: 0.95rem;
+            margin-top: 16px;
+            font-size: 0.90rem;
             color: var(--text-main);
             font-weight: 500;
         }
 
-        /* Сценарии (ситуации) */
+        /* Сценарии */
         .scenarios {
-            padding: 80px 0;
+            padding: 70px 0;
             background: white;
-            border-radius: 40px 40px 0 0;
+            border-radius: 36px 36px 0 0;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 16px;
+            font-size: 2.2rem;
+            margin-bottom: 12px;
         }
 
         .section-subtitle {
             text-align: center;
             color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 56px;
+            font-size: 1rem;
+            margin-bottom: 40px;
         }
 
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+            gap: 24px;
         }
 
         .scenario-card {
             background: var(--bg-color);
             border-radius: var(--radius);
-            padding: 36px;
-            transition: transform 0.3s;
-        }
-
-        .scenario-card:hover {
-            transform: translateY(-5px);
+            padding: 30px;
         }
 
         .scenario-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
             color: var(--accent-green);
         }
 
         .scenario-card p {
             color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
-        /* Блок заказа / Контакты */
+        /* Блок заказа */
         .order-section {
-            padding: 80px 0;
+            padding: 70px 0;
         }
 
         .order-card {
             background: white;
             border-radius: var(--radius);
-            padding: 60px;
+            padding: 50px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
@@ -271,37 +257,31 @@
         }
 
         .order-card h2 {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
+            font-size: 2.2rem;
+            margin-bottom: 14px;
         }
 
         .order-card p {
             color: var(--text-muted);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .messengers {
             display: flex;
-            gap: 12px;
-            margin-top: 20px;
+            gap: 10px;
+            margin-top: 16px;
             flex-wrap: wrap;
         }
 
         .msg-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px 22px;
+            gap: 8px;
+            padding: 10px 18px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: opacity 0.2s, transform 0.2s;
-        }
-
-        .msg-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
+            font-size: 0.9rem;
         }
 
         .whatsapp {
@@ -315,8 +295,8 @@
         }
 
         .msg-icon {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             background-size: cover;
             background-position: center;
@@ -324,40 +304,41 @@
             background-color: white;
         }
 
-        /* Футер */
         footer {
             background: var(--text-main);
             color: white;
-            padding: 60px 0;
+            padding: 50px 0;
             text-align: center;
         }
 
         footer p {
             color: rgba(255,255,255,0.7);
-            margin-top: 16px;
+            margin-top: 12px;
         }
 
-        /* Адаптивность */
+        /* Мобильные экраны */
         @media (max-width: 968px) {
             .hero, .order-card, .grid-3 {
                 grid-template-columns: 1fr;
             }
             .hero-content h1 {
-                font-size: 2.8rem;
+                font-size: 2.4rem;
             }
-            header {
-                flex-direction: column;
-                gap: 16px;
+            .hero-card {
+                padding: 24px;
+            }
+            .order-card {
+                padding: 30px 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Плавающая кнопка MAX в стиле сайта адвокатов -->
+    <!-- Плавающая кнопка MAX (компактная, поднята выше) -->
     <a class="max-float" href="https://max.app/79308026864" target="_blank" rel="noopener">
         <div class="max-icon-wrap"></div>
-        Написать в Max
+        Max
     </a>
 
     <div class="container">
@@ -418,24 +399,21 @@
                     <h2>Обсудим вашу уборку?</h2>
                     <p>Свяжитесь с нами напрямую удобным способом. Ответим на все вопросы, подберем удобное время и рассчитаем стоимость за пару минут.</p>
                     <div class="messengers">
-                        <!-- Кнопка WhatsApp -->
                         <a href="https://wa.me/79308026864" target="_blank" class="msg-btn whatsapp">
                             <span class="msg-icon" style="background-image: url('whatsaap.jpg');"></span>
                             WhatsApp
                         </a>
-                        <!-- Кнопка Max -->
                         <a href="https://max.app/79308026864" target="_blank" class="msg-btn max-btn">
                             <span class="msg-icon" style="background-image: url('max.png');"></span>
                             Max
                         </a>
-                        <!-- Кнопка Позвонить -->
                         <a href="tel:+79308026864" class="msg-btn" style="background: var(--accent-sand); color: var(--text-main);">
                             📞 Позвонить
                         </a>
                     </div>
                 </div>
                 <div>
-                    <div style="background: var(--bg-color); padding: 32px; border-radius: 16px;">
+                    <div style="background: var(--bg-color); padding: 24px; border-radius: 16px;">
                         <h3 style="margin-bottom: 12px; color: var(--accent-green);">Контакты сервиса</h3>
                         <p style="margin-bottom: 8px;"><strong>Телефон:</strong> +7 (930) 802-68-64</p>
                         <p style="margin-bottom: 8px;"><strong>Контактное лицо:</strong> Эльмира</p>
@@ -450,7 +428,7 @@
         <div class="container">
             <h3>🌿 Чистый Дом</h3>
             <p>Профессиональный клининг в Дзержинске и Володарском районе</p>
-            <p style="font-size: 0.85rem; margin-top: 24px;">© 2026 Все права защищены</p>
+            <p style="font-size: 0.85rem; margin-top: 20px;">© 2026 Все права защищены</p>
         </div>
     </footer>
 
