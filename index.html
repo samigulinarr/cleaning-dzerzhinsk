@@ -356,10 +356,43 @@
             gap: 24px;
         }
 
+        /* Обновленные карточки с уютным фоном и плавным проявлением при наведении */
         .scenario-card {
-            background: var(--bg-color);
+            position: relative;
             border-radius: var(--radius);
-            padding: 30px;
+            padding: 35px 30px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            color: var(--text-main);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+
+        .scenario-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(251, 249, 245, 0.94); /* Спокойный кремовый фон по умолчанию */
+            transition: background 0.4s ease;
+            z-index: 1;
+        }
+
+        .scenario-card:hover::before {
+            background: rgba(251, 249, 245, 0.75); /* При наведении вуаль светлеет, нежно проявляя картинку */
+        }
+
+        .scenario-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .scenario-card h3, 
+        .scenario-card p {
+            position: relative;
+            z-index: 2;
         }
 
         .scenario-card h3 {
@@ -528,15 +561,18 @@
             <p class="section-subtitle">Выберите ситуацию, а мы позаботимся об остальном</p>
             
             <div class="grid-3">
-                <div class="scenario-card">
+                <!-- Карточка 1: Утро после праздника -->
+                <div class="scenario-card" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80');">
                     <h3>☕️ Утро после праздника</h3>
                     <p>Быстро и деликатно уберем все следы вчерашней вечеринки, вернем дому первозданную свежесть и уют без лишних хлопот.</p>
                 </div>
-                <div class="scenario-card">
+                <!-- Карточка 2: Скоро гости или родные -->
+                <div class="scenario-card" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80');">
                     <h3>🏡 Скоро гости или родные</h3>
                     <p>Наведем безукоризненный лоск перед важной встречей. Каждая полочка, зеркало и уголок будут сиять чистотой.</p>
                 </div>
-                <div class="scenario-card">
+                <!-- Карточка 3: Для семьи с детьми -->
+                <div class="scenario-card" style="background-image: url('https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=600&q=80');">
                     <h3>👶 Для семьи с детьми</h3>
                     <p>Используем только гипоаллергенные, безопасные эко-средства без резких запахов. Идеально чисто и безопасно для малышей.</p>
                 </div>
