@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Чистый Дом — бережная уборка в Дзержинске и Володарском районе</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #FBF9F5;
@@ -217,7 +217,7 @@
             transform: translateX(2px);
         }
 
-        /* Шапка */
+        /* Шапка и стильный логотип */
         header {
             padding: 20px 0;
             display: flex;
@@ -227,10 +227,20 @@
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--accent-green);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            font-style: italic;
+            font-weight: 600;
+            opacity: 0.9;
         }
 
         .header-contacts {
@@ -292,16 +302,45 @@
             text-align: center;
         }
 
+        /* Обновленная главная карточка с эффектом проявления */
         .hero-card {
-            background: var(--peach);
+            position: relative;
+            background-size: cover;
+            background-position: center;
             border-radius: var(--radius);
             padding: 40px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(244, 235, 225, 0.94); /* Плотный персиково-кремовый фон по умолчанию */
+            transition: background 0.4s ease;
+            z-index: 1;
+        }
+
+        .hero-card:hover::before {
+            background: rgba(244, 235, 225, 0.76); /* При наведении нежно проявляется уютная картинка */
+        }
+
+        .hero-card h3, 
+        .hero-card ul, 
+        .hero-card .manager-info {
             position: relative;
+            z-index: 2;
         }
 
         .hero-card h3 {
             font-size: 1.6rem;
             margin-bottom: 14px;
+            color: var(--accent-green);
         }
 
         .hero-card ul {
@@ -356,7 +395,7 @@
             gap: 24px;
         }
 
-        /* Обновленные карточки с уютным фоном и плавным проявлением при наведении */
+        /* Карточки сценариев с плавной вуалью */
         .scenario-card {
             position: relative;
             border-radius: var(--radius);
@@ -376,16 +415,16 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(251, 249, 245, 0.94); /* Спокойный кремовый фон по умолчанию */
+            background: rgba(251, 249, 245, 0.94);
             transition: background 0.4s ease;
             z-index: 1;
         }
 
         .scenario-card:hover::before {
-            background: rgba(251, 249, 245, 0.75); /* При наведении вуаль светлеет, нежно проявляя картинку */
+            background: rgba(251, 249, 245, 0.75);
         }
 
-        .scenario-card:hover {
+        .scenario-card:hover, .hero-card:hover {
             transform: translateY(-4px);
         }
 
@@ -528,7 +567,7 @@
 
     <div class="container">
         <header>
-            <a href="#" class="logo">🌿 Чистый Дом</a>
+            <a href="#" class="logo">🌿 Чистый <span>Дом</span></a>
             <div class="header-contacts">
                 <a href="tel:+79308026864" class="phone">+7 (930) 802-68-64</a>
             </div>
@@ -540,7 +579,8 @@
                 <p>Бережная и профессиональная уборка квартир и домов в Дзержинске и Володарском районе. Создаем безупречную чистоту, пока вы занимаетесь тем, что любите.</p>
                 <a href="#order" class="btn">Вызвать клинера</a>
             </div>
-            <div class="hero-card">
+            <!-- Главная карточка с фоновым уютным изображением и проявлением -->
+            <div class="hero-card" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80');">
                 <h3>Всё продумано за вас</h3>
                 <ul>
                     <li>Привозим всю безопасную эко-химию</li>
@@ -607,7 +647,7 @@
                     <div style="background: var(--bg-color); padding: 24px; border-radius: 16px;">
                         <h3 style="margin-bottom: 12px; color: var(--accent-green);">Контакты сервиса</h3>
                         <p style="margin-bottom: 8px;"><strong>Телефон:</strong> +7 (930) 802-68-64</p>
-                        <p style="margin-bottom: 8px;"><strong>Контактное лицо:</strong> Эльмира</p>
+                        <p style="margin-bottom: 8px;"><strong>Управляющий партнёр:</strong> Эльмира</p>
                         <p><strong>Район работы:</strong> Дзержинск и Володарский район</p>
                     </div>
                 </div>
@@ -653,7 +693,7 @@
             if (option === 1) {
                 appendMessage("💰 Как узнать стоимость уборки?", "user");
                 setTimeout(() => {
-                    appendMessage("Стоимость зависит от площади и типа уборки (поддерживающая, генеральная или после ремонта). Напишите нам, и наш менеджер рассчитает точную цену за 2 минуты!", "bot");
+                    appendMessage("Стоимость зависит от площади и типа уборки (поддерживающая, генеральная или после ремонта). Напишите нам, и Эльмира рассчитает точную цену за 2 минуты!", "bot");
                     updateOptions([
                         { text: "💬 Написать в ВКонтакте", action: "window.open('https://vk.me/id167602054', '_blank')" },
                         { text: "💚 Написать в WhatsApp", action: "window.open('https://wa.me/79308026864', '_blank')" },
