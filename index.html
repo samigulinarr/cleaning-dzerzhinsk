@@ -245,6 +245,7 @@
             display: flex;
             gap: 12px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .msg-btn {
@@ -256,7 +257,12 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: opacity 0.2s;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .msg-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
         }
 
         .whatsapp {
@@ -264,13 +270,10 @@
             color: white;
         }
 
-        .max-app {
-            background-color: var(--accent-green);
+        /* Фирменный градиент и стиль для кнопки Max */
+        .max-btn {
+            background: linear-gradient(135deg, #00C6FF 0%, #0072FF 50%, #7B42F6 100%);
             color: white;
-        }
-
-        .msg-btn:hover {
-            opacity: 0.9;
         }
 
         /* Футер */
@@ -359,10 +362,11 @@
             <div class="order-card">
                 <div>
                     <h2>Обсудим вашу уборку?</h2>
-                    <p>Свяжитесь с Эльмирой напрямую удобным способом. Ответим на все вопросы, подберем удобное время и рассчитаем стоимость за пару минут.</p>
+                    <p>Свяжитесь с нами напрямую удобным способом. Ответим на все вопросы, подберем удобное время и рассчитаем стоимость за пару минут.</p>
                     <div class="messengers">
-                        <a href="https://wa.me/79308026864" target="_blank" class="msg-btn whatsapp">WhatsApp</a>
-                        <a href="tel:+79308026864" class="msg-btn max-app">Позвонить</a>
+                        <a href="https://wa.me/79308026864" target="_blank" class="msg-btn whatsapp">💬 WhatsApp</a>
+                        <a href="https://max.app/79308026864" target="_blank" class="msg-btn max-btn">🔵 Max</a>
+                        <a href="tel:+79308026864" class="msg-btn" style="background: var(--accent-sand); color: var(--text-main);">📞 Позвонить</a>
                     </div>
                 </div>
                 <div>
