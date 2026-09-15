@@ -217,7 +217,7 @@
             transform: translateX(2px);
         }
 
-        /* Шапка и стильный логотип */
+        /* Шапка и логотип */
         header {
             padding: 20px 0;
             display: flex;
@@ -302,7 +302,7 @@
             text-align: center;
         }
 
-        /* Обновленная главная карточка с эффектом проявления */
+        /* Главная карточка с эффектом проявления */
         .hero-card {
             position: relative;
             background-size: cover;
@@ -321,13 +321,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(244, 235, 225, 0.94); /* Плотный персиково-кремовый фон по умолчанию */
+            background: rgba(244, 235, 225, 0.94);
             transition: background 0.4s ease;
             z-index: 1;
         }
 
         .hero-card:hover::before {
-            background: rgba(244, 235, 225, 0.76); /* При наведении нежно проявляется уютная картинка */
+            background: rgba(244, 235, 225, 0.76);
         }
 
         .hero-card h3, 
@@ -521,6 +521,13 @@
             margin-top: 12px;
         }
 
+        .legal-notice {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+
         @media (max-width: 968px) {
             .hero, .order-card, .grid-3 {
                 grid-template-columns: 1fr;
@@ -549,18 +556,18 @@
         <div class="chat-header">
             <div class="chat-header-info">
                 <h4>Чистый Дом • Помощник</h4>
-                <span>Эльмира онлайн</span>
+                <span>Менеджер на связи</span>
             </div>
             <button class="chat-close" id="chatClose">&times;</button>
         </div>
         <div class="chat-body" id="chatBody">
             <div class="chat-msg bot">
-                Здравствуйте! 👋 Я виртуальный помощник сервиса «Чистый Дом». Чем мы можем вам помочь?
+                Здравствуйте! 👋 Я виртуальный помощник сервиса «Чистый Дом». Оставьте заявку на расчет, и наш менеджер свяжется с вами для согласования деталей.
             </div>
         </div>
         <div class="chat-options" id="chatOptions">
-            <button class="chat-opt-btn" onclick="botAnswer(1)">💰 Как узнать стоимость уборки?</button>
-            <button class="chat-opt-btn" onclick="botAnswer(2)">📍 Где вы работаете?</button>
+            <button class="chat-opt-btn" onclick="botAnswer(1)">💰 Запросить расчет стоимости</button>
+            <button class="chat-opt-btn" onclick="botAnswer(2)">📍 Узнать районы выезда</button>
             <button class="chat-opt-btn" onclick="botAnswer(3)">💬 Написать в ВКонтакте</button>
         </div>
     </div>
@@ -577,7 +584,7 @@
             <div class="hero-content">
                 <h1>Подарите себе выходные, а рутину <span>оставьте нам</span></h1>
                 <p>Бережная и профессиональная уборка квартир и домов в Дзержинске и Володарском районе. Создаем безупречную чистоту, пока вы занимаетесь тем, что любите.</p>
-                <a href="#order" class="btn">Вызвать клинера</a>
+                <a href="#order" class="btn">Оставить заявку на расчет</a>
             </div>
             <!-- Главная карточка с фоновым уютным изображением и проявлением -->
             <div class="hero-card" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80');">
@@ -589,7 +596,7 @@
                     <li>Строгий контроль качества перед сдачей</li>
                 </ul>
                 <div class="manager-info">
-                    💬 Управляющий партнёр: <strong>Эльмира</strong>
+                    💬 Индивидуальный подход: <strong>наш менеджер</strong>
                 </div>
             </div>
         </section>
@@ -625,7 +632,7 @@
             <div class="order-card">
                 <div>
                     <h2>Обсудим вашу уборку?</h2>
-                    <p>Свяжитесь с нами напрямую удобным способом. Ответим на все вопросы, подберем удобное время и рассчитаем стоимость за пару минут.</p>
+                    <p>Оставьте заявку на предварительный расчет. Наш менеджер изучит детали вашего заказа и свяжется с вами для согласования удобного времени.</p>
                     <div class="messengers">
                         <!-- Кнопка WhatsApp -->
                         <a href="https://wa.me/79308026864" target="_blank" class="msg-btn whatsapp">
@@ -639,15 +646,15 @@
                         </a>
                         <!-- Кнопка Позвонить -->
                         <a href="tel:+79308026864" class="msg-btn" style="background: var(--accent-sand); color: var(--text-main);">
-                            📞 Позвонить
+                            📞 Связаться
                         </a>
                     </div>
                 </div>
                 <div>
                     <div style="background: var(--bg-color); padding: 24px; border-radius: 16px;">
-                        <h3 style="margin-bottom: 12px; color: var(--accent-green);">Контакты сервиса</h3>
+                        <h3 style="margin-bottom: 12px; color: var(--accent-green);">Детали заказа</h3>
                         <p style="margin-bottom: 8px;"><strong>Телефон:</strong> +7 (930) 802-68-64</p>
-                        <p style="margin-bottom: 8px;"><strong>Управляющий партнёр:</strong> Эльмира</p>
+                        <p style="margin-bottom: 8px;"><strong>Контактное лицо:</strong> наш менеджер</p>
                         <p><strong>Район работы:</strong> Дзержинск и Володарский район</p>
                     </div>
                 </div>
@@ -659,7 +666,8 @@
         <div class="container">
             <h3>🌿 Чистый Дом</h3>
             <p>Профессиональный клининг в Дзержинске и Володарском районе</p>
-            <p style="font-size: 0.85rem; margin-top: 20px;">© 2026 Все права защищены</p>
+            <p class="legal-notice">Информация на сайте носит ознакомительный характер и не является публичной офертой. Исполнитель оставляет за собой право согласования заявки.</p>
+            <p style="font-size: 0.85rem; margin-top: 15px;">© 2026 Все права защищены</p>
         </div>
     </footer>
 
@@ -691,9 +699,9 @@
 
         function botAnswer(option) {
             if (option === 1) {
-                appendMessage("💰 Как узнать стоимость уборки?", "user");
+                appendMessage("💰 Запросить расчет стоимости", "user");
                 setTimeout(() => {
-                    appendMessage("Стоимость зависит от площади и типа уборки (поддерживающая, генеральная или после ремонта). Напишите нам, и Эльмира рассчитает точную цену за 2 минуты!", "bot");
+                    appendMessage("Стоимость рассчитывается индивидуально под каждый объект. Напишите нашему менеджеру параметры квартиры, и мы уточним возможность выезда!", "bot");
                     updateOptions([
                         { text: "💬 Написать в ВКонтакте", action: "window.open('https://vk.me/id167602054', '_blank')" },
                         { text: "💚 Написать в WhatsApp", action: "window.open('https://wa.me/79308026864', '_blank')" },
@@ -701,11 +709,11 @@
                     ]);
                 }, 500);
             } else if (option === 2) {
-                appendMessage("📍 Где вы работаете?", "user");
+                appendMessage("📍 Узнать районы выезда", "user");
                 setTimeout(() => {
-                    appendMessage("Мы работаем по всему городу Дзержинску и в Володарском районе. Приезжаем со своим инвентарем и экологичной химией.", "bot");
+                    appendMessage("Мы обслуживаем весь Дзержинск и Володарский район. Напишите адрес объекту нашему менеджеру для согласования графика.", "bot");
                     updateOptions([
-                        { text: "📞 Позвонить нам", action: "window.location.href='tel:+79308026864'" },
+                        { text: "📞 Связаться с нами", action: "window.location.href='tel:+79308026864'" },
                         { text: "◀️ Назад в меню", action: "resetMenu()" }
                     ]);
                 }, 500);
@@ -731,8 +739,8 @@
 
         function resetMenu() {
             chatOptions.innerHTML = `
-                <button class="chat-opt-btn" onclick="botAnswer(1)">💰 Как узнать стоимость уборки?</button>
-                <button class="chat-opt-btn" onclick="botAnswer(2)">📍 Где вы работаете?</button>
+                <button class="chat-opt-btn" onclick="botAnswer(1)">💰 Запросить расчет стоимости</button>
+                <button class="chat-opt-btn" onclick="botAnswer(2)">📍 Узнать районы выезда</button>
                 <button class="chat-opt-btn" onclick="botAnswer(3)">💬 Написать в ВКонтакте</button>
             `;
         }
