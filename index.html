@@ -46,6 +46,45 @@
             padding: 0 24px;
         }
 
+        /* Плавающая синяя кнопка MAX с иконкой (взято с сайта адвокатов) */
+        .max-float {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 9999;
+            padding: 8px 16px 8px 8px;
+            border-radius: 999px;
+            background: #0066ff;
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+        }
+
+        .max-float:hover {
+            transform: scale(1.03);
+            background: #0052cc;
+        }
+
+        .max-icon-wrap {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background-color: #fff;
+            background-image: url('max.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
         /* Шапка */
         header {
             padding: 24px 0;
@@ -271,15 +310,18 @@
         }
 
         .max-btn {
-            background: linear-gradient(135deg, #00C6FF 0%, #0072FF 50%, #7B42F6 100%);
+            background: #0066ff;
             color: white;
         }
 
-        .msg-btn svg {
+        .msg-icon {
             width: 22px;
             height: 22px;
-            fill: currentColor;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
             flex-shrink: 0;
+            background-color: white;
         }
 
         /* Футер */
@@ -311,6 +353,12 @@
     </style>
 </head>
 <body>
+
+    <!-- Плавающая кнопка MAX в стиле сайта адвокатов -->
+    <a class="max-float" href="https://max.app/79308026864" target="_blank" rel="noopener">
+        <div class="max-icon-wrap"></div>
+        Написать в Max
+    </a>
 
     <div class="container">
         <header>
@@ -370,14 +418,14 @@
                     <h2>Обсудим вашу уборку?</h2>
                     <p>Свяжитесь с нами напрямую удобным способом. Ответим на все вопросы, подберем удобное время и рассчитаем стоимость за пару минут.</p>
                     <div class="messengers">
-                        <!-- Точный логотип WhatsApp -->
+                        <!-- Кнопка WhatsApp -->
                         <a href="https://wa.me/79308026864" target="_blank" class="msg-btn whatsapp">
-                            <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m0 1.77c2.2 0 4.27.86 5.82 2.42a8.22 8.22 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24-1.43 0-2.82-.38-4.03-1.09l-.29-.17-3.03.8.81-2.95-.19-.31A8.15 8.15 0 0 1 3.8 12.01c0-4.54 3.7-8.24 8.24-8.24m4.52 10.15c-.25-.13-1.47-.73-1.7-.81-.23-.08-.4-.13-.57.13-.17.25-.66.81-.81.98-.15.17-.31.19-.56.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.38-1.73-.15-.25-.02-.38.11-.51.11-.11.25-.31.38-.47.13-.17.17-.29.25-.48.08-.19.04-.36-.02-.5-.06-.13-.57-1.38-.78-1.89-.2-.5-.41-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.17.16 1.61.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg>
+                            <span class="msg-icon" style="background-image: url('whatsaap.jpg');"></span>
                             WhatsApp
                         </a>
-                        <!-- Точный логотип Max -->
+                        <!-- Кнопка Max -->
                         <a href="https://max.app/79308026864" target="_blank" class="msg-btn max-btn">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.68 14.85c-1.32.74-2.96.48-4.01-.58l-.07-.07-2.61 2.61c-.39.39-1.02.39-1.41 0-.39-.39-.39-1.02 0-1.41l2.61-2.61-.07-.07c-1.06-1.05-1.32-2.69-.58-4.01 1.01-1.81 3.32-2.45 5.13-1.44 1.81 1.01 2.45 3.32 1.44 5.13z"/></svg>
+                            <span class="msg-icon" style="background-image: url('max.png');"></span>
                             Max
                         </a>
                         <!-- Кнопка Позвонить -->
